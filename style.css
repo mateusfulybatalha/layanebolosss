@@ -1,0 +1,133 @@
+/* Configurações gerais da página */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background-color: #3a1b0b;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #3a1b0b;
+  font-family: Arial, sans-serif;
+}
+
+/* Catálogo centralizado, com largura máxima de 560px */
+.catalogo {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  overflow: hidden;
+  line-height: 0;
+}
+
+/* Imagem original: sem cortes ou alterações */
+.imagem-catalogo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Áreas transparentes sobre cada bolo */
+.bolo-area {
+  position: absolute;
+  display: block;
+  z-index: 1;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  background-color: transparent;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+/* Destaque dourado ao passar o mouse */
+@media (hover: hover) and (pointer: fine) {
+  .bolo-area:hover {
+    background-color: rgb(212 165 58 / 10%);
+    border-color: rgb(212 165 58 / 65%);
+  }
+}
+
+/* Destaque ao tocar e foco acessível pelo teclado */
+.bolo-area:active {
+  background-color: rgb(212 165 58 / 18%);
+  border-color: #d4a53a;
+}
+
+.bolo-area:focus-visible {
+  outline: 3px solid #d4a53a;
+  outline-offset: -4px;
+  background-color: rgb(212 165 58 / 10%);
+}
+
+/*
+  Posicionamento em porcentagem da imagem original.
+  Cada área inclui a foto, o nome e a descrição do bolo.
+*/
+
+/* Moranguíssimo - superior esquerdo */
+.moranguissimo {
+  left: 6.2%;
+  top: 17.9%;
+  width: 41.7%;
+  height: 35.2%;
+}
+
+/* Dois amores - superior direito */
+.dois-amores {
+  left: 53.8%;
+  top: 17.9%;
+  width: 41.8%;
+  height: 35.2%;
+}
+
+/* Ninho com Nutella - inferior esquerdo */
+.ninho-nutella {
+  left: 5.5%;
+  top: 56.3%;
+  width: 41.5%;
+  height: 35.2%;
+}
+
+/* Chocolatudo - inferior direito */
+.chocolatudo {
+  left: 53.2%;
+  top: 56.3%;
+  width: 41.5%;
+  height: 35.2%;
+}
+
+
+/* Animação suave do selo */
+@keyframes pulsar {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 2px 7px rgb(0 0 0 / 20%);
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 3px 12px rgb(37 211 102 / 35%);
+  }
+}
+
+/* Respeita quem prefere movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
