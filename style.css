@@ -104,6 +104,24 @@ body {
   height: 35.2%;
 }
 
+/* Selinho verde para pedir pelo WhatsApp */
+.selo-pedir {
+  position: absolute;
+  top: 1.5%;
+  right: 2%;
+  display: inline-block;
+  padding: 9px 13px;
+  border: 1px solid rgb(255 255 255 / 45%);
+  border-radius: 999px;
+  background-color: #25d366;
+  color: #12351f;
+  font-size: clamp(10px, 2.8vw, 13px);
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 2px 7px rgb(0 0 0 / 20%);
+  animation: pulsar 2s ease-in-out infinite;
+}
 
 /* Animação suave do selo */
 @keyframes pulsar {
@@ -129,5 +147,13 @@ body {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 380px) {
+  .selo-pedir {
+    padding: 6px 8px;
+    font-size: 10px;
   }
 }
